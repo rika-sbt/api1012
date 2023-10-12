@@ -8,6 +8,9 @@ app.get("/", (req, res) => {
   res.send("チュートリアルにようこそ");
 });
 
+// CORSを全てのルートで許可
+app.use(cors());
+
 // お客様情報をサーバーに置いておく
 const customers = [
   { title: "田中", id: 1 },
