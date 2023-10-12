@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-app.listen(3000, console.log("サーバーが開始されました"));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`サーバーが開始されました: ${port}`));
+
 
 app.get("/", (req, res) => {
   res.send("チュートリアルにようこそ");
